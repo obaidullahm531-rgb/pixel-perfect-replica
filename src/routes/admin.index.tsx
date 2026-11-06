@@ -36,7 +36,10 @@ function Dashboard() {
           return [t, count ?? 0] as const;
         }),
       );
-      return { counts: Object.fromEntries(counts), unread: Object.fromEntries(unread) };
+      return {
+        counts: Object.fromEntries(counts) as Record<string, number>,
+        unread: Object.fromEntries(unread) as Record<(typeof INBOX)[number], number>,
+      };
     },
   });
   const totalUnread = data ? Object.values(data.unread).reduce((a, b) => a + b, 0) : 0;

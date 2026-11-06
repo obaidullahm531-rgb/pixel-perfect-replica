@@ -23,7 +23,16 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { ImageField } from "./ImageField";
 
-export type Row = Record<string, unknown> & { id: string };
+type Key =
+  | "published" | "sort_order" | "created_at" | "slug" | "title" | "name" | "label" | "url" | "platform"
+  | "banner_url" | "tournament_name" | "position" | "achieved_on" | "prize_money" | "image_url" | "caption"
+  | "category" | "video_url" | "thumbnail_url" | "full_name" | "subject" | "company" | "contact_person" | "ign"
+  | "preferred_role" | "is_read" | "photo_url" | "age" | "real_name" | "role" | "role_label" | "featured"
+  | "start_date" | "status" | "prize_pool" | "logo_url" | "tier" | "sponsor_type" | "published_at" | "email";
+
+/** Known column names are typed explicitly so they can be read with dot access. */
+export type Values = { [K in Key]?: unknown } & Record<string, unknown>;
+export type Row = Values & { id: string };
 
 export type FieldDef = {
   name: string;
@@ -100,7 +109,7 @@ export function ResourceManager({
   orderBy?: { col: string; asc?: boolean }[];
   folder: string;
   searchKeys?: string[];
-  beforeSave?: (values: Record<string, unknown>, existing: Row | null) => Record<string, unknown> | string;
+  beforeSave?: (values: Values, existing: Row | null) => Values | string;
   hasPublished?: boolean;
 }) {
   const qc = useQueryClient();
@@ -316,7 +325,7 @@ function RecordForm({
   initial: Record<string, unknown>;
   folder: string;
   saving: boolean;
-  onSubmit: (values: Record<string, unknown>) => void;
+  onSubmit: (values: Values) => void;
   onCancel: () => void;
 }) {
   const [vals, setVals] = useState<Record<string, string | boolean>>(() =>

@@ -24,9 +24,11 @@ import { Route as TournamentsRouteImport } from './routes/tournaments'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminAchievementsRouteImport } from './routes/admin.achievements'
 import { Route as AdminGalleryRouteImport } from './routes/admin.gallery'
+import { Route as AdminInboxRouteImport } from './routes/admin.inbox'
 import { Route as AdminManagersRouteImport } from './routes/admin.managers'
 import { Route as AdminNewsRouteImport } from './routes/admin.news'
 import { Route as AdminPlayersRouteImport } from './routes/admin.players'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminSocialRouteImport } from './routes/admin.social'
 import { Route as AdminSponsorsRouteImport } from './routes/admin.sponsors'
 import { Route as AdminTournamentsRouteImport } from './routes/admin.tournaments'
@@ -111,6 +113,11 @@ const AdminGalleryRoute = AdminGalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminInboxRoute = AdminInboxRouteImport.update({
+  id: '/inbox',
+  path: '/inbox',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminManagersRoute = AdminManagersRouteImport.update({
   id: '/managers',
   path: '/managers',
@@ -124,6 +131,11 @@ const AdminNewsRoute = AdminNewsRouteImport.update({
 const AdminPlayersRoute = AdminPlayersRouteImport.update({
   id: '/players',
   path: '/players',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminSocialRoute = AdminSocialRouteImport.update({
@@ -182,9 +194,11 @@ export interface FileRoutesByFullPath {
   '/tournaments': typeof TournamentsRoute
   '/admin/achievements': typeof AdminAchievementsRoute
   '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/inbox': typeof AdminInboxRoute
   '/admin/managers': typeof AdminManagersRoute
   '/admin/news': typeof AdminNewsRoute
   '/admin/players': typeof AdminPlayersRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/admin/social': typeof AdminSocialRoute
   '/admin/sponsors': typeof AdminSponsorsRoute
   '/admin/tournaments': typeof AdminTournamentsRoute
@@ -209,9 +223,11 @@ export interface FileRoutesByTo {
   '/tournaments': typeof TournamentsRoute
   '/admin/achievements': typeof AdminAchievementsRoute
   '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/inbox': typeof AdminInboxRoute
   '/admin/managers': typeof AdminManagersRoute
   '/admin/news': typeof AdminNewsRoute
   '/admin/players': typeof AdminPlayersRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/admin/social': typeof AdminSocialRoute
   '/admin/sponsors': typeof AdminSponsorsRoute
   '/admin/tournaments': typeof AdminTournamentsRoute
@@ -238,9 +254,11 @@ export interface FileRoutesById {
   '/tournaments': typeof TournamentsRoute
   '/admin/achievements': typeof AdminAchievementsRoute
   '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/inbox': typeof AdminInboxRoute
   '/admin/managers': typeof AdminManagersRoute
   '/admin/news': typeof AdminNewsRoute
   '/admin/players': typeof AdminPlayersRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/admin/social': typeof AdminSocialRoute
   '/admin/sponsors': typeof AdminSponsorsRoute
   '/admin/tournaments': typeof AdminTournamentsRoute
@@ -268,9 +286,11 @@ export interface FileRouteTypes {
     | '/tournaments'
     | '/admin/achievements'
     | '/admin/gallery'
+    | '/admin/inbox'
     | '/admin/managers'
     | '/admin/news'
     | '/admin/players'
+    | '/admin/settings'
     | '/admin/social'
     | '/admin/sponsors'
     | '/admin/tournaments'
@@ -295,9 +315,11 @@ export interface FileRouteTypes {
     | '/tournaments'
     | '/admin/achievements'
     | '/admin/gallery'
+    | '/admin/inbox'
     | '/admin/managers'
     | '/admin/news'
     | '/admin/players'
+    | '/admin/settings'
     | '/admin/social'
     | '/admin/sponsors'
     | '/admin/tournaments'
@@ -323,9 +345,11 @@ export interface FileRouteTypes {
     | '/tournaments'
     | '/admin/achievements'
     | '/admin/gallery'
+    | '/admin/inbox'
     | '/admin/managers'
     | '/admin/news'
     | '/admin/players'
+    | '/admin/settings'
     | '/admin/social'
     | '/admin/sponsors'
     | '/admin/tournaments'
@@ -463,6 +487,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminGalleryRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/inbox': {
+      id: '/admin/inbox'
+      path: '/inbox'
+      fullPath: '/admin/inbox'
+      preLoaderRoute: typeof AdminInboxRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/managers': {
       id: '/admin/managers'
       path: '/managers'
@@ -482,6 +513,13 @@ declare module '@tanstack/react-router' {
       path: '/players'
       fullPath: '/admin/players'
       preLoaderRoute: typeof AdminPlayersRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/social': {
@@ -546,9 +584,11 @@ declare module '@tanstack/react-router' {
 interface AdminRouteChildren {
   AdminAchievementsRoute: typeof AdminAchievementsRoute
   AdminGalleryRoute: typeof AdminGalleryRoute
+  AdminInboxRoute: typeof AdminInboxRoute
   AdminManagersRoute: typeof AdminManagersRoute
   AdminNewsRoute: typeof AdminNewsRoute
   AdminPlayersRoute: typeof AdminPlayersRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
   AdminSocialRoute: typeof AdminSocialRoute
   AdminSponsorsRoute: typeof AdminSponsorsRoute
   AdminTournamentsRoute: typeof AdminTournamentsRoute
@@ -559,9 +599,11 @@ interface AdminRouteChildren {
 const AdminRouteChildren: AdminRouteChildren = {
   AdminAchievementsRoute: AdminAchievementsRoute,
   AdminGalleryRoute: AdminGalleryRoute,
+  AdminInboxRoute: AdminInboxRoute,
   AdminManagersRoute: AdminManagersRoute,
   AdminNewsRoute: AdminNewsRoute,
   AdminPlayersRoute: AdminPlayersRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
   AdminSocialRoute: AdminSocialRoute,
   AdminSponsorsRoute: AdminSponsorsRoute,
   AdminTournamentsRoute: AdminTournamentsRoute,
