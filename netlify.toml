@@ -1,0 +1,16 @@
+# Netlify build settings. These override whatever is typed in the Netlify UI.
+[build]
+  command = "bun run build"
+  # The Netlify build puts the website files in "dist" (not "dist/client")
+  # and the server part in ".netlify/functions-internal" automatically.
+  publish = "dist"
+
+# Public (publishable) backend connection values. The .env file is not pushed
+# to GitHub, so Netlify needs them here to build the site. These are safe to
+# be public — they are the same values the browser already receives.
+[build.environment]
+  VITE_SUPABASE_URL = "https://c--855e27be-dec7-40d4-8120-7e625d0ac1c9-prod.lovable.cloud"
+  VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_AZ2bpMv6UMIfmRqCI4ECbA_yWmlrrGU"
+  VITE_SUPABASE_PROJECT_ID = "cicisbbsghibdahznisc"
+  SUPABASE_URL = "https://c--855e27be-dec7-40d4-8120-7e625d0ac1c9-prod.lovable.cloud"
+  SUPABASE_PUBLISHABLE_KEY = "sb_publishable_AZ2bpMv6UMIfmRqCI4ECbA_yWmlrrGU"
