@@ -10,33 +10,350 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AchievementsRouteImport } from './routes/achievements'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SponsorsRouteImport } from './routes/sponsors'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TournamentsRouteImport } from './routes/tournaments'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminAchievementsRouteImport } from './routes/admin.achievements'
+import { Route as AdminGalleryRouteImport } from './routes/admin.gallery'
+import { Route as AdminManagersRouteImport } from './routes/admin.managers'
+import { Route as AdminNewsRouteImport } from './routes/admin.news'
+import { Route as AdminPlayersRouteImport } from './routes/admin.players'
+import { Route as AdminSocialRouteImport } from './routes/admin.social'
+import { Route as AdminSponsorsRouteImport } from './routes/admin.sponsors'
+import { Route as AdminTournamentsRouteImport } from './routes/admin.tournaments'
+import { Route as AdminVideosRouteImport } from './routes/admin.videos'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as PlayersIndexRouteImport } from './routes/players.index'
+import { Route as PlayersSlugRouteImport } from './routes/players.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AchievementsRoute = AchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SponsorsRoute = SponsorsRouteImport.update({
+  id: '/sponsors',
+  path: '/sponsors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TournamentsRoute = TournamentsRouteImport.update({
+  id: '/tournaments',
+  path: '/tournaments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAchievementsRoute = AdminAchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminGalleryRoute = AdminGalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminManagersRoute = AdminManagersRouteImport.update({
+  id: '/managers',
+  path: '/managers',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminNewsRoute = AdminNewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPlayersRoute = AdminPlayersRouteImport.update({
+  id: '/players',
+  path: '/players',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSocialRoute = AdminSocialRouteImport.update({
+  id: '/social',
+  path: '/social',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSponsorsRoute = AdminSponsorsRouteImport.update({
+  id: '/sponsors',
+  path: '/sponsors',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminTournamentsRoute = AdminTournamentsRouteImport.update({
+  id: '/tournaments',
+  path: '/tournaments',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminVideosRoute = AdminVideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => AdminRoute,
+} as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsSlugRoute = NewsSlugRouteImport.update({
+  id: '/news/$slug',
+  path: '/news/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayersIndexRoute = PlayersIndexRouteImport.update({
+  id: '/players/',
+  path: '/players/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayersSlugRoute = PlayersSlugRouteImport.update({
+  id: '/players/$slug',
+  path: '/players/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/sponsors': typeof SponsorsRoute
+  '/terms': typeof TermsRoute
+  '/tournaments': typeof TournamentsRoute
+  '/admin/achievements': typeof AdminAchievementsRoute
+  '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/managers': typeof AdminManagersRoute
+  '/admin/news': typeof AdminNewsRoute
+  '/admin/players': typeof AdminPlayersRoute
+  '/admin/social': typeof AdminSocialRoute
+  '/admin/sponsors': typeof AdminSponsorsRoute
+  '/admin/tournaments': typeof AdminTournamentsRoute
+  '/admin/videos': typeof AdminVideosRoute
+  '/news/$slug': typeof NewsSlugRoute
+  '/players/$slug': typeof PlayersSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/news/': typeof NewsIndexRoute
+  '/players/': typeof PlayersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/sponsors': typeof SponsorsRoute
+  '/terms': typeof TermsRoute
+  '/tournaments': typeof TournamentsRoute
+  '/admin/achievements': typeof AdminAchievementsRoute
+  '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/managers': typeof AdminManagersRoute
+  '/admin/news': typeof AdminNewsRoute
+  '/admin/players': typeof AdminPlayersRoute
+  '/admin/social': typeof AdminSocialRoute
+  '/admin/sponsors': typeof AdminSponsorsRoute
+  '/admin/tournaments': typeof AdminTournamentsRoute
+  '/admin/videos': typeof AdminVideosRoute
+  '/news/$slug': typeof NewsSlugRoute
+  '/players/$slug': typeof PlayersSlugRoute
+  '/admin': typeof AdminIndexRoute
+  '/news': typeof NewsIndexRoute
+  '/players': typeof PlayersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/join': typeof JoinRoute
+  '/privacy': typeof PrivacyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/sponsors': typeof SponsorsRoute
+  '/terms': typeof TermsRoute
+  '/tournaments': typeof TournamentsRoute
+  '/admin/achievements': typeof AdminAchievementsRoute
+  '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/managers': typeof AdminManagersRoute
+  '/admin/news': typeof AdminNewsRoute
+  '/admin/players': typeof AdminPlayersRoute
+  '/admin/social': typeof AdminSocialRoute
+  '/admin/sponsors': typeof AdminSponsorsRoute
+  '/admin/tournaments': typeof AdminTournamentsRoute
+  '/admin/videos': typeof AdminVideosRoute
+  '/news/$slug': typeof NewsSlugRoute
+  '/players/$slug': typeof PlayersSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/news/': typeof NewsIndexRoute
+  '/players/': typeof PlayersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/achievements'
+    | '/admin'
+    | '/contact'
+    | '/gallery'
+    | '/join'
+    | '/privacy'
+    | '/reset-password'
+    | '/sponsors'
+    | '/terms'
+    | '/tournaments'
+    | '/admin/achievements'
+    | '/admin/gallery'
+    | '/admin/managers'
+    | '/admin/news'
+    | '/admin/players'
+    | '/admin/social'
+    | '/admin/sponsors'
+    | '/admin/tournaments'
+    | '/admin/videos'
+    | '/news/$slug'
+    | '/players/$slug'
+    | '/admin/'
+    | '/news/'
+    | '/players/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/achievements'
+    | '/contact'
+    | '/gallery'
+    | '/join'
+    | '/privacy'
+    | '/reset-password'
+    | '/sponsors'
+    | '/terms'
+    | '/tournaments'
+    | '/admin/achievements'
+    | '/admin/gallery'
+    | '/admin/managers'
+    | '/admin/news'
+    | '/admin/players'
+    | '/admin/social'
+    | '/admin/sponsors'
+    | '/admin/tournaments'
+    | '/admin/videos'
+    | '/news/$slug'
+    | '/players/$slug'
+    | '/admin'
+    | '/news'
+    | '/players'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/achievements'
+    | '/admin'
+    | '/contact'
+    | '/gallery'
+    | '/join'
+    | '/privacy'
+    | '/reset-password'
+    | '/sponsors'
+    | '/terms'
+    | '/tournaments'
+    | '/admin/achievements'
+    | '/admin/gallery'
+    | '/admin/managers'
+    | '/admin/news'
+    | '/admin/players'
+    | '/admin/social'
+    | '/admin/sponsors'
+    | '/admin/tournaments'
+    | '/admin/videos'
+    | '/news/$slug'
+    | '/players/$slug'
+    | '/admin/'
+    | '/news/'
+    | '/players/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AchievementsRoute: typeof AchievementsRoute
+  AdminRoute: typeof AdminRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  JoinRoute: typeof JoinRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  SponsorsRoute: typeof SponsorsRoute
+  TermsRoute: typeof TermsRoute
+  TournamentsRoute: typeof TournamentsRoute
+  NewsSlugRoute: typeof NewsSlugRoute
+  PlayersSlugRoute: typeof PlayersSlugRoute
+  NewsIndexRoute: typeof NewsIndexRoute
+  PlayersIndexRoute: typeof PlayersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +365,229 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/achievements': {
+      id: '/achievements'
+      path: '/achievements'
+      fullPath: '/achievements'
+      preLoaderRoute: typeof AchievementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sponsors': {
+      id: '/sponsors'
+      path: '/sponsors'
+      fullPath: '/sponsors'
+      preLoaderRoute: typeof SponsorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tournaments': {
+      id: '/tournaments'
+      path: '/tournaments'
+      fullPath: '/tournaments'
+      preLoaderRoute: typeof TournamentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/achievements': {
+      id: '/admin/achievements'
+      path: '/achievements'
+      fullPath: '/admin/achievements'
+      preLoaderRoute: typeof AdminAchievementsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/gallery': {
+      id: '/admin/gallery'
+      path: '/gallery'
+      fullPath: '/admin/gallery'
+      preLoaderRoute: typeof AdminGalleryRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/managers': {
+      id: '/admin/managers'
+      path: '/managers'
+      fullPath: '/admin/managers'
+      preLoaderRoute: typeof AdminManagersRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/news': {
+      id: '/admin/news'
+      path: '/news'
+      fullPath: '/admin/news'
+      preLoaderRoute: typeof AdminNewsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/players': {
+      id: '/admin/players'
+      path: '/players'
+      fullPath: '/admin/players'
+      preLoaderRoute: typeof AdminPlayersRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/social': {
+      id: '/admin/social'
+      path: '/social'
+      fullPath: '/admin/social'
+      preLoaderRoute: typeof AdminSocialRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/sponsors': {
+      id: '/admin/sponsors'
+      path: '/sponsors'
+      fullPath: '/admin/sponsors'
+      preLoaderRoute: typeof AdminSponsorsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/tournaments': {
+      id: '/admin/tournaments'
+      path: '/tournaments'
+      fullPath: '/admin/tournaments'
+      preLoaderRoute: typeof AdminTournamentsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/videos': {
+      id: '/admin/videos'
+      path: '/videos'
+      fullPath: '/admin/videos'
+      preLoaderRoute: typeof AdminVideosRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/news/': {
+      id: '/news/'
+      path: '/news'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/$slug': {
+      id: '/news/$slug'
+      path: '/news/$slug'
+      fullPath: '/news/$slug'
+      preLoaderRoute: typeof NewsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/players/': {
+      id: '/players/'
+      path: '/players'
+      fullPath: '/players/'
+      preLoaderRoute: typeof PlayersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/players/$slug': {
+      id: '/players/$slug'
+      path: '/players/$slug'
+      fullPath: '/players/$slug'
+      preLoaderRoute: typeof PlayersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminAchievementsRoute: typeof AdminAchievementsRoute
+  AdminGalleryRoute: typeof AdminGalleryRoute
+  AdminManagersRoute: typeof AdminManagersRoute
+  AdminNewsRoute: typeof AdminNewsRoute
+  AdminPlayersRoute: typeof AdminPlayersRoute
+  AdminSocialRoute: typeof AdminSocialRoute
+  AdminSponsorsRoute: typeof AdminSponsorsRoute
+  AdminTournamentsRoute: typeof AdminTournamentsRoute
+  AdminVideosRoute: typeof AdminVideosRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAchievementsRoute: AdminAchievementsRoute,
+  AdminGalleryRoute: AdminGalleryRoute,
+  AdminManagersRoute: AdminManagersRoute,
+  AdminNewsRoute: AdminNewsRoute,
+  AdminPlayersRoute: AdminPlayersRoute,
+  AdminSocialRoute: AdminSocialRoute,
+  AdminSponsorsRoute: AdminSponsorsRoute,
+  AdminTournamentsRoute: AdminTournamentsRoute,
+  AdminVideosRoute: AdminVideosRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AchievementsRoute: AchievementsRoute,
+  AdminRoute: AdminRouteWithChildren,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  JoinRoute: JoinRoute,
+  PrivacyRoute: PrivacyRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  SponsorsRoute: SponsorsRoute,
+  TermsRoute: TermsRoute,
+  TournamentsRoute: TournamentsRoute,
+  NewsSlugRoute: NewsSlugRoute,
+  PlayersSlugRoute: PlayersSlugRoute,
+  NewsIndexRoute: NewsIndexRoute,
+  PlayersIndexRoute: PlayersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
